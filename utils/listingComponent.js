@@ -31,11 +31,11 @@ class listingComponent{
 			const componentsJS = await self.getRoutersSync(componentPath, ['.js']);
 
 			// generate import for main.js
-			const jsFiles = (Object.keys(componentsJS)).map(file => './' + path.join(source, file));
+			const jsFiles = (Object.keys(componentsJS)).map(file => ('./' + path.posix.join(source, file)).replace(/\\/g, `\\\\`));
 			jsFileses.push(...jsFiles);
 			
 			// generate import for main.css
-			const cssFiles = (Object.keys(componentsCSS)).map(file => './' + path.join(source, file));
+			const cssFiles = (Object.keys(componentsCSS)).map(file => ('./' + path.posix.join(source, file)).replace(/\\/g, `\\\\`));
 			cssFileses.push(...cssFiles);
 		}
 
