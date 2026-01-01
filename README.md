@@ -4,13 +4,6 @@ This is a template for building desktop applications using [NW.js](https://nwjs.
 
 This template is inspired by [nw-vue3-boilerplate](https://github.com/nwutils/nw-vue3-boilerplate) , but it is framework-agnostic and uses only Vite for the web part.
 
-## Features
-
-*   **Fast Development:** Leverages Vite's fast Hot Module Replacement (HMR) for a smooth development experience.
-*   **Cross-Platform:** Build your application for Linux and Windows (can be extended to macOS).
-*   **Framework Agnostic:** Use your favorite UI library or vanilla JavaScript.
-*   **Easy to build:** Simple commands for development and production builds.
-
 ## Getting Started
 
 ### Prerequisites
