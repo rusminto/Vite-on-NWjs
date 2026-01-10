@@ -26,3 +26,5 @@ tmp
 *.sln
 *.sw?
 package-lock.json
+
+src_background/config/app.config.js

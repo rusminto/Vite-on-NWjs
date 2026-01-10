@@ -3,8 +3,8 @@
   	"version": "1.0.0",
   	"scripts": {
   	  	"start": "concurrently -k npm:dev:web npm:dev:desktop",
-  	  	"dev:web": "node ./utils/startWeb.js",
-  	  	"dev:desktop": "wait-on -c waitOnConfig.json http-get://localhost:8888 && nw . --disable-crash-handler=true",
+  	  	"dev:web": "NODE_ENV=development node ./utils/startWeb.js",
+  	  	"dev:desktop": "wait-on -c waitOnConfig.json http-get://localhost:8888 && NODE_ENV=development nw . --disable-crash-handler=true",
   	  	"build": "npm run build:clean && npm run build:web && npm run build:nw",
   	  	"build:clean": "rimraf ./dist",
   	  	"build:web": "node ./utils/buildWeb.js",
@@ -12,14 +12,14 @@
   	},
   	"devDependencies": {
   	  	"concurrently": "^9.2.1",
-  	  	"nw": "^0.104.0-sdk",
-  	  	"nw-builder": "^4.16.2",
+  	  	"nw": "0.104.0-sdk",
+  	  	"nw-builder": "4.16.2",
   	  	"rimraf": "^6.1.2",
   	  	"vite": "^7.0.4",
   	  	"wait-on": "^9.0.3"
   	},
   	"main": "http://localhost:8888",
-  	"node-main": "serveUi.js",
+  	"node-main": "service.js",
   	"window": {
   	  	"width": 960,
   	  	"height": 600,
@@ -31,12 +31,14 @@
   	"chromium-args": "--enable_node_worker --mixed-context --disable-pinch --disable-raf-throttling",
   	"author": "rusminto https://github.com/rusminto",
   	"license": "MIT",
-  	"dependencies": {
-  	  	"express": "^5.2.1"
-  	},
+	"dependencies": {},
+  	"workspaces": [
+  		"src_background/class/*"
+  	],
   	"nwBuild": [{
   		"mode": "build",
   		"flavor": "sdk",
+  		"version": "0.104.0",
   		"platform": "linux",
   		"arch": "x64",
   		"logLevel": "debug",
@@ -59,6 +61,7 @@
   	},{
   		"mode": "build",
   		"flavor": "sdk",
+		"version": "0.104.0",
   		"platform": "win",
   		"arch": "x64",
   		"logLevel": "debug",

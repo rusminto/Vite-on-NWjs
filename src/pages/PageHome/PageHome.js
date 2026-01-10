@@ -40,6 +40,29 @@ class PageHome extends HTMLElement {
 			router.go('/about');
 		})
 
+		const apiButton = document.createElement('button');
+		apiButton.classList.add('btn', 'btn-wide', 'mt-5');
+		apiButton.innerText = 'Ping API';
+		wrapper.append(apiButton);
+
+		const apiResponse = document.createElement('pre');
+		apiResponse.setAttribute('id', 'api-response');
+		apiResponse.classList.add('mt-5', 'p-4', 'bg-gray-100', 'rounded');
+		wrapper.append(apiResponse);
+
+		apiButton.addEventListener('click', async () => {
+			const responseEl = document.getElementById('api-response');
+			responseEl.innerText = 'Loading...';
+			try {
+				const response = await fetch('/api/ping');
+				const data = await response.json();
+				responseEl.innerText = JSON.stringify(data, null, 2);
+			} catch (error) {
+				responseEl.innerText = `Error: ${error.message}`;
+				console.error(error);
+			}
+		});
+
 		return wrapper;
 	}
 

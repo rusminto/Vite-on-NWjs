@@ -12,9 +12,17 @@ fs.copyFileSync(
 );
 
 fs.copyFileSync(
-	path.join(dir, 'utils', 'serveUi.js'), 
-	path.join(dir, 'dist', 'web', 'serveUi.js')
+	path.join(dir, 'service.js'), 
+	path.join(dir, 'dist', 'web', 'service.js')
 );
+
+fs.cpSync(
+	path.join(dir, 'src_background'),
+	path.join(dir, 'dist', 'web', 'src_background'), {
+		recursive: true,
+		force: true // Overwrites existing files
+	}
+)
 
 import("nw-builder")
 .then( async ({ default: nwbuild }) => {
