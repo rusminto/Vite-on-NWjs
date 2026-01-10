@@ -31,6 +31,7 @@ This template is inspired by [nw-vue3-boilerplate](https://github.com/nwutils/nw
     ```bash
     npm install
     ```
+4.  Copy the app.config.sample.js into app.config.js in `src_background/config`
 
 ### Development
 
