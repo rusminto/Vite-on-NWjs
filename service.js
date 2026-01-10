@@ -6,7 +6,7 @@ global.__configFile = `${__basedir}/config/app.config`;
 
 // ================== EXPRESS ====================
 const config = require(__configFile);
-const c$express = require(`${__classdir}/express`);
+const c$express = require('express.helper');
 const debug = config.debug;
 
 const path = require('path');

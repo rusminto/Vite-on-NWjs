@@ -31,10 +31,10 @@
   	"chromium-args": "--enable_node_worker --mixed-context --disable-pinch --disable-raf-throttling",
   	"author": "rusminto https://github.com/rusminto",
   	"license": "MIT",
-	"dependencies": {},
-  	"workspaces": [
-  		"src_background/class/*"
-  	],
+	"dependencies": {
+		"express.helper": "git+https://github.com/rusminto/express.helper.git",
+		"common.helper": "git+https://github.com/rusminto/common.helper.git"
+	},
   	"nwBuild": [{
   		"mode": "build",
   		"flavor": "sdk",

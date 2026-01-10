@@ -1,7 +1,7 @@
-const c$express = require(`${__classdir}/express`);
+const c$express = require('express.helper');
 const router = c$express.Router();
 
-const helper = require(`${__classdir}/helper`);
+const helper = require('common.helper');
 const l$ping = require(`${__libdir}/ping`);
 
 router.get('/', async function (req, res, next) {
