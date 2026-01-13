@@ -1,6 +1,7 @@
 /* PLEASE DON'T CHANGE EVERYTHING BETWEEN '\/* ... *\/' blabla '\/* end of ... *\/' */
 
 /* css components */
+@import url('./components/textRotate/textRotate.css');
 @import url('./pages/Page404/Page404.css');
 @import url('./pages/PageAbout/PageAbout.css');
 @import url('./pages/PageHome/PageHome.css');

@@ -1,6 +1,7 @@
 // PLEASE DON'T CHANGE EVERYTHING BETWEEN '/* ... */' blabla '/* end of ... */'
 
 /* js components */
+import './components/textRotate/textRotate.js';
 import './pages/Page404/Page404.js';
 import './pages/PageAbout/PageAbout.js';
 import './pages/PageHome/PageHome.js';

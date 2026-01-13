@@ -12,24 +12,9 @@ class PageHome extends HTMLElement {
 		const wrapper = document.createElement('div');
 		wrapper.classList.add('flex', 'justify-center', 'items-center', 'h-screen', 'flex-col');
 
-		const text = document.createElement('div');
-		text.classList.add('text-3xl');
+		const textRotate = document.createElement("text-rotate");
 
-		text.innerHTML = `
-		<span>
-  		  Are you feeling 
-  		  <span class="text-rotate">
-    		<span>
-      		  <span class="bg-teal-400 text-teal-800 px-2">good</span>
-      		  <span class="bg-red-400 text-red-800 px-2">awful</span>
-      		  <span class="bg-yellow-400 text-yellow-800 px-2">lucky</span>
-      		  <span class="bg-blue-400 text-blue-800 px-2">sad</span>
-    		</span>
-  		  </span>
-  		  today ?
-		</span>
-		`;
-		wrapper.append(text);
+		wrapper.append(textRotate);
 
 		const button = document.createElement('button');
 		button.classList.add('btn', 'btn-wide', 'mt-5');

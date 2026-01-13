@@ -2,7 +2,8 @@
   	"name": "template-vite-nw",
   	"version": "1.0.0",
   	"scripts": {
-  	  	"start": "concurrently -k npm:dev:web npm:dev:desktop",
+  	  	"start": "concurrently -k npm:dev:service npm:dev:web npm:dev:desktop",
+  	  	"dev:service": "NODE_ENV=development node service.js",
   	  	"dev:web": "NODE_ENV=development node ./utils/startWeb.js",
   	  	"dev:desktop": "wait-on -c waitOnConfig.json http-get://localhost:8888 && NODE_ENV=development nw . --disable-crash-handler=true",
   	  	"build": "npm run build:clean && npm run build:web && npm run build:nw",
